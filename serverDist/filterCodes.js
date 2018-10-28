@@ -21,7 +21,6 @@ var geocoder = (0, _nodeGeocoder2.default)(options);
 
 var geoFunc = function geoFunc(queryStr) {
   return geocoder.geocode(queryStr).then(function (geoCoded) {
-    console.log(queryStr.length);
     if (geoCoded.length === 0 || geoCoded[0].zipcode !== queryStr) {
       //geocoder sometimes returns a random address upon invalid zip code
       return { 'code': 'Invalid zip code' };
